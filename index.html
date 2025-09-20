@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CainFed Back-In</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #002f6c;
+            color: white;
+            text-align: center;
+            padding: 50px;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: #004a99;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            color: #ffd700;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        input {
+            padding: 10px;
+            width: 250px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #ffd700;
+            color: #002f6c;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #ffcc00;
+        }
+
+        #message {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🔐 CainFed Back-In</h1>
+        <p>Log in to access your loads, documents, and payments.</p>
+
+        <form id="loginForm">
+            <input type="email" id="email" placeholder="Email" required /><br />
+            <input type="password" id="password" placeholder="Password" required /><br />
+            <button type="submit">Log In</button>
+        </form>
+
+        <div id="message"></div>
+    </div>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            if (email === "driver@cainfed.com" && password === "123456") {
+                alert("Login successful!");
+                window.location.href = "dashboard.html";
+            } else {
+                document.getElementById("message").textContent = "❌ Invalid email or password";
+                document.getElementById("message").style.color = "red";
+            }
+        });
+    </script>
+</body>
+
+</html>
